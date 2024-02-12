@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0),
             child: Image.asset('assets/images/logo.png'),
           ),
         ),

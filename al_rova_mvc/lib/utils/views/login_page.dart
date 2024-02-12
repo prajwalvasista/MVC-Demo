@@ -1,3 +1,4 @@
+import 'package:al_rova_mvc/utils/views/signup_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
               'assets/images/logo.png',
               width: 400,
               alignment: Alignment.center,
-              height: 350,
+              height: 250,
             ),
             const Padding(
               padding: EdgeInsets.all(14.0),
@@ -35,19 +36,19 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 5),
             Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(14.0),
               child: TextField(
-                keyboardType: TextInputType.numberWithOptions(decimal: false),
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(
+                      16,
+                    ),
                   ),
                   hintText: "Please Enter number !!",
-                  prefixIcon: Icon(Icons.login, color: Colors.black),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15),
-                    ),
+                  prefixIcon: Icon(
+                    Icons.login,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -58,7 +59,9 @@ class _LoginPageState extends State<LoginPage> {
               child: Center(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.green),
+                    backgroundColor: MaterialStatePropertyAll(
+                      Colors.green,
+                    ),
                   ),
                   onPressed: () {},
                   child: Text(
@@ -71,6 +74,37 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Row(
+                children: [
+                  Text(
+                    "Didn't have an account? Please",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupPage(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Register Here",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
