@@ -1,3 +1,4 @@
+import 'package:al_rova_mvc/utils/views/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -145,7 +146,14 @@ class _OtpPageState extends State<OtpPage> {
                     Colors.green,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DashBoardPage(),
+                    ),
+                  );
+                },
                 child: Text(
                   "Submit",
                   style: TextStyle(
