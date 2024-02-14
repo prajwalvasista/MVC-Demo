@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
                 'assets/images/logo.png',
                 width: 400,
                 alignment: Alignment.center,
-                height: 250,
+                height: 200,
               ),
               const Padding(
                 padding: EdgeInsets.all(14.0),
