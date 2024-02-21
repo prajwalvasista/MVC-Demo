@@ -7,10 +7,12 @@ import 'package:al_rova_mvc/utils/widgets/toast/common_button.dart';
 import 'package:al_rova_mvc/utils/widgets/toast/common_input_box.dart';
 import 'package:al_rova_mvc/utils/widgets/toast/show_common_toast.dart';
 import 'package:al_rova_mvc/views/dashboard_page.dart';
+import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -30,11 +32,11 @@ class _RegisterState extends State<Register> {
 
   bool isLoading = false;
 
-  // open terms & condition url
-  // _launchURLBrowser() async {
-  //   var url = Uri.parse("https://rova.acelucid.com/terms_condition.html");
-  //   await launchUrl(url);
-  // }
+  //open terms & condition url
+  _launchURLBrowser() async {
+    var url = Uri.parse("https://rova.acelucid.com/terms_condition.html");
+    await launchUrl(url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class _RegisterState extends State<Register> {
                   ),
                   Center(
                     child: Image.asset(
-                      Images.splashLogo,
+                      "assets/images/splash_logo.png",
                       width: 250,
                       height: 250,
                       fit: BoxFit.contain,
@@ -203,32 +205,32 @@ class _RegisterState extends State<Register> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0).copyWith(bottom: 3),
-              // child: RichText(
-              //   textAlign: TextAlign.center,
-              //   text: TextSpan(
-              //     text: AppStrings.agreeContinueMsg,
-              //     style: const TextStyle(color: AppColors.black),
-              //     children: <TextSpan>[
-              //       TextSpan(
-              //           text: AppStrings.termsCondition,
-              //           recognizer: TapGestureRecognizer()
-              //             ..onTap = () {
-              //               _launchURLBrowser();
-              //             },
-              //           style: const TextStyle(
-              //               fontWeight: FontWeight.bold, color: Colors.blue)),
-              //       const TextSpan(text: ' and'),
-              //       TextSpan(
-              //           text: AppStrings.privacyPolicy,
-              //           recognizer: TapGestureRecognizer()
-              //             ..onTap = () {
-              //               _launchURLBrowser();
-              //             },
-              //           style: const TextStyle(
-              //               fontWeight: FontWeight.bold, color: Colors.blue)),
-              //     ],
-              //   ),
-              // ),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: AppStrings.agreeContinueMsg,
+                  style: const TextStyle(color: AppColors.black),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: AppStrings.termsCondition,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            _launchURLBrowser();
+                          },
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.blue)),
+                    const TextSpan(text: ' and'),
+                    TextSpan(
+                        text: AppStrings.privacyPolicy,
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            _launchURLBrowser();
+                          },
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.blue)),
+                  ],
+                ),
+              ),
             ),
             CommonButton(
               onPressed: () async {
