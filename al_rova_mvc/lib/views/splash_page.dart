@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:al_rova_mvc/utils/views/login_page.dart';
+import 'package:al_rova_mvc/views/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -17,8 +16,8 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
       const Duration(seconds: 3),
       () {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const LoginPage()));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const Login()));
       },
     );
   }
